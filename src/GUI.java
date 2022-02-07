@@ -75,6 +75,19 @@ public class GUI extends JFrame{
         lblAusgabe.setBounds(120, 200, 250, 40);
         btnZiehen.setBounds(370, 200, 100, 40);
 
+        btnZiehen.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                int T1 = Integer.parseInt(txtZahl1.getText());
+                int T2 = Integer.parseInt(txtZahl2.getText());
+                int T3 = Integer.parseInt(txtZahl3.getText());
+                int T4 = Integer.parseInt(txtZahl4.getText());
+                int T5 = Integer.parseInt(txtZahl5.getText());
+                int T6 = Integer.parseInt(txtZahl6.getText());
+
+                newSpiel = new Spiel(T1, T2, T3, T4, T5, T6);
+            }
+        });
+
         add(lblTipp);
         add(lblZiehung);
         add(lblZusatzzahl);
