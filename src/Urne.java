@@ -13,8 +13,8 @@ public class Urne {
     public Kugel ziehen() {
         int position = (int) (anzahl * Math.random());
         Kugel eineKugel = dieKugeln[position];
-        for (int i = position; i < anzahl; i++) {
-            dieKugeln[i] = dieKugeln[i +1];
+        for (int i = position; i < anzahl - 1; i++) {
+            dieKugeln[i] = dieKugeln[i + 1];
         }
         anzahl--;
         return eineKugel;
