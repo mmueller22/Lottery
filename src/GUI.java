@@ -1,3 +1,4 @@
+import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -75,7 +76,7 @@ public class GUI extends JFrame{
         lblAusgabe.setBounds(120, 200, 250, 40);
         btnZiehen.setBounds(370, 200, 100, 40);
 
-        btnZiehen.addActionListener(new ActionListener(){
+        btnZiehen.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 int T1 = Integer.parseInt(txtZahl1.getText());
                 int T2 = Integer.parseInt(txtZahl2.getText());
@@ -85,6 +86,25 @@ public class GUI extends JFrame{
                 int T6 = Integer.parseInt(txtZahl6.getText());
 
                 newSpiel = new Spiel(T1, T2, T3, T4, T5, T6);
+                //print lottery draw
+                lblZahl1.setText(newSpiel.getLottozahl(1));
+                lblZahl2.setText(newSpiel.getLottozahl(2));
+                lblZahl3.setText(newSpiel.getLottozahl(3));
+                lblZahl4.setText(newSpiel.getLottozahl(4));
+                lblZahl5.setText(newSpiel.getLottozahl(5));
+                lblZahl6.setText(newSpiel.getLottozahl(6));
+
+                //print users tip in order
+                txtZahl1.setText(newSpiel.getUserTip(1));
+                txtZahl2.setText(newSpiel.getUserTip(2));
+                txtZahl3.setText(newSpiel.getUserTip(3));
+                txtZahl4.setText(newSpiel.getUserTip(4));
+                txtZahl5.setText(newSpiel.getUserTip(5));
+                txtZahl6.setText(newSpiel.getUserTip(6));
+
+                lblZusatzzahl.setText("Zusatzzahl: " + newSpiel.getZusatzzahl());
+
+                lblAusgabe.setText(newSpiel.getGewinn());
             }
         });
 
